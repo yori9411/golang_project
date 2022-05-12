@@ -1,0 +1,152 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is sample of practicing API to get data in MySQL",
+        "title": "Swagger API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "127.0.0.1:8000",
+    "basePath": "/v1",
+    "paths": {
+        "/users/": {
+            "get": {
+                "description": "get ID, Name,Password,Email and Birthday of all users in MySQL",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MySQL"
+                ],
+                "summary": "Get All User",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/pojo.User"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/users/search": {
+            "get": {
+                "description": "get ID, Name,Password,Email and Birthday by  user's id in MySQL",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MySQL"
+                ],
+                "summary": "Get User by Id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "Id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/pojo.User"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "post ID, Name,Password,Email and Birthday by  user's id in MySQL",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MySQL"
+                ],
+                "summary": "Post User by Id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "Id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/pojo.User"
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete ID, Name,Password,Email and Birthday by  user's id in MySQL",
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "MySQL"
+                ],
+                "summary": "Delete User by Id",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "id",
+                        "name": "Id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/pojo.User"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "pojo.User": {
+            "type": "object",
+            "properties": {
+                "UserBirthday": {
+                    "type": "string"
+                },
+                "UserEmail": {
+                    "type": "string"
+                },
+                "UserId": {
+                    "type": "integer"
+                },
+                "UserName": {
+                    "type": "string"
+                },
+                "UserPassword": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
