@@ -1,3 +1,3 @@
 # golang_project
-1.Use golang to connect mySql database
-2.Set up swagger UI
+ 1. Use golang to connect mySql database
+ 1. Set up swagger UI
